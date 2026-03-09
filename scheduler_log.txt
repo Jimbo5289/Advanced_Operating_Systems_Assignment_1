@@ -1,0 +1,10 @@
+2026-03-09 15:54:02 : Student 100102503 submitted job 'LowPriorityJob' (priority=2, execution_time=20s)
+2026-03-09 15:54:31 : Student 100102503 submitted job 'HighPriorityJob' (priority=10, execution_time=15s)
+2026-03-09 15:54:54 : Student 100102503 submitted job 'MediumPriorityJob' (priority=5, execution_time=10s)
+2026-03-09 15:54:58 : Priority Scheduler: started job 'HighPriorityJob' (Student 100102503, Priority 10, Execution Time 15s)
+2026-03-09 15:54:59 : Priority Scheduler: completed job 'HighPriorityJob' (Student 100102503, Priority 10)
+2026-03-09 15:54:59 : Priority Scheduler: started job 'MediumPriorityJob' (Student 100102503, Priority 5, Execution Time 10s)
+2026-03-09 15:55:00 : Priority Scheduler: completed job 'MediumPriorityJob' (Student 100102503, Priority 5)
+2026-03-09 15:55:00 : Priority Scheduler: started job 'LowPriorityJob' (Student 100102503, Priority 2, Execution Time 20s)
+2026-03-09 15:55:01 : Priority Scheduler: completed job 'LowPriorityJob' (Student 100102503, Priority 2)
+2026-03-09 16:00:01 : Exited the scheduler

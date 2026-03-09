@@ -149,10 +149,61 @@ def run_round_robin():
     
     
 def run_priority():
-    print("Feature not yet implemented")  # Placeholder for actual implementation
+    print("\n========== PRIORITY SCHEDULER ==========")
+
+    try:
+        with open(QUEUE_FILE, "r") as queue:
+            jobs = [line.strip().split(",") for line in queue if line.strip()]
+
+        if not jobs:
+            print("No jobs available in the queue.")
+            log_event("Priority scheduling attempted with empty queue")
+            return
+
+    except FileNotFoundError:
+        print("Error: job queue file not found.")
+        log_event("Priority scheduling failed: queue file not found")
+        return
+
+    # Sort by highest priority first
+    jobs.sort(key=lambda job: int(job[2]), reverse=True)
+
+    for job in jobs:
+        student_id = job[0]
+        job_name = job[1]
+        priority = int(job[2])
+        execution_time = int(job[3])
+
+        print(
+            f"Running job '{job_name}' "
+            f"(Student ID: {student_id}, Priority: {priority}, Execution Time: {execution_time}s)"
+        )
+
+        log_event(
+            f"Priority Scheduler: started job '{job_name}' "
+            f"(Student {student_id}, Priority {priority}, Execution Time {execution_time}s)"
+        )
+
+        time.sleep(1)
+
+        with open(COMPLETED_FILE, "a") as completed:
+            completed.write(f"{student_id},{job_name},{priority},{execution_time}\n")
+
+        log_event(
+            f"Priority Scheduler: completed job '{job_name}' "
+            f"(Student {student_id}, Priority {priority})"
+        )
+
+    # Clear queue after all jobs have been processed
+    open(QUEUE_FILE, "w").close()
+
+    print("Priority scheduling complete.")
+   
+   
 
 def view_completed_jobs():
     print("Feature not yet implemented")  # Placeholder for actual implementation
+
 
 while True:
     show_menu()
