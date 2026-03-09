@@ -2,3 +2,4 @@
 2026-03-09 12:38:16 : Submitted job 'Impliment code changes and stage in GitHub' with priority 5 and execution time 300 seconds
 2026-03-09 12:39:06 : Submitted job 'Save files' with priority 10 and execution time 30 seconds
 2026-03-09 12:51:48 : Student 100102503 submitted job 'Complete debugging and submit any changes to repo' (priority=6, execution_time=180s)
+2026-03-09 13:09:12 : Student 100102503 submitted job 'Make improvements to the scheduling system and push changes to repo' (priority=1, execution_time=600s)

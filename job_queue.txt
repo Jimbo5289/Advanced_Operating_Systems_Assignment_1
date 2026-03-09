@@ -1,3 +1,4 @@
 100102503,Impliment code changes and stage in GitHub,300,5
 100102503,Save files,30,10
 100102503,Complete debugging and submit any changes to repo,180,6
+100102503,Make improvements to the scheduling system and push changes to repo,1,600

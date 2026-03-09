@@ -21,8 +21,29 @@ def show_menu():
     print("=" * 39)
     
 def view_pending_jobs():
-    print("Feature not yet implemented")  # Placeholder for actual implementation
+    print("\n========== Pending Jobs ==========")
     
+    try:
+        with open(QUEUE_FILE, "r") as queue:
+            jobs = [line.strip() for line in queue if line.strip()]
+            
+            if not jobs:
+                print("No jobs currently in the queue.")
+                return
+            
+            for index, job in enumerate(jobs, start=1):
+                student_id, job_name, priority, execution_time = job.split(",")
+                print(
+                    f"{index}. Student ID: {student_id} | "
+                    f"Job Name: {job_name} | "
+                    f"Execution Time: {execution_time}s |"
+                    f"Priority: {priority}"
+                )
+                
+    except FileNotFoundError:
+        print("Error: job queue file not found.")
+        
+        
 def submit_jobs():
     print("\n========== Submit Job ==========")
     
