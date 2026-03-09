@@ -1,0 +1,32 @@
+2026-03-07 15:12:58 : Selected CPU and memory usage option
+2026-03-07 15:13:05 : Selected top processes option
+2026-03-07 15:13:06 : Selected process termination option
+2026-03-07 15:13:08 : Selected disk inspection option
+2026-03-07 15:13:10 : Selected log archiving option
+2026-03-07 15:19:51 : Exited system
+2026-03-07 15:20:33 : Selected CPU and memory usage option
+2026-03-07 15:23:31 : Exited system
+2026-03-07 15:45:39 : Selected CPU and memory usage option
+2026-03-07 15:54:47 : Exited system
+2026-03-07 15:54:55 : Viewed CPU and memory usage
+2026-03-07 15:58:36 : Viewed top 10 memory consuming processes
+2026-03-07 16:00:55 : Selected process termination option
+2026-03-07 16:03:50 : Viewed top 10 memory consuming processes
+2026-03-07 16:04:25 : Viewed top 10 memory consuming processes
+2026-03-07 16:04:48 : Viewed top 10 memory consuming processes
+2026-03-07 16:05:41 : Viewed top 10 memory consuming processes
+2026-03-07 16:08:57 : Selected process termination option
+2026-03-07 16:09:08 : Selected process termination option
+2026-03-07 16:09:45 : Selected process termination option
+2026-03-07 16:12:04 : Attempted termination of non-existent PID: 5803
+2026-03-07 16:13:43 : Terminated process PID 5959
+2026-03-08 11:15:04 : Exited system
+2026-03-08 11:15:30 : Inspected disk usage for directory: .
+2026-03-08 11:16:52 : Inspected disk usage for directory: /users/jamesingleton/documents
+2026-03-08 11:18:21 : Invalid directory entered for disk inspection: /users/johnsmith/documents
+2026-03-08 11:21:48 : Exited system
+2026-03-08 11:21:54 : No large log files found for archiving
+2026-03-08 11:24:39 : Archived log file: ./test.log to ArchiveLogs/test_20260308_112439.log.gz
+2026-03-08 11:24:53 : Exited system
+2026-03-08 11:25:05 : Archived log file: ./test.log to ArchiveLogs/test_20260308_112505.log.gz
+2026-03-08 11:25:37 : Exited system
