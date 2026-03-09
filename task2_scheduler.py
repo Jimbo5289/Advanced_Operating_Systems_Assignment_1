@@ -1,4 +1,5 @@
 from datetime import datetime
+import time
 
 QUEUE_FILE = "job_queue.txt"
 COMPLETED_FILE = "completed_jobs.txt"
@@ -84,7 +85,68 @@ def submit_jobs():
     
     
 def run_round_robin():
-    print("Feature not yet implemented")  # Placeholder for actual implementation
+    print("\n========== ROUND ROBIN SCHEDULER ==========")
+
+    quantum = 5
+
+    try:
+        with open(QUEUE_FILE, "r") as queue:
+            jobs = [line.strip().split(",") for line in queue if line.strip()]
+
+        if not jobs:
+            print("No jobs available in the queue.")
+            log_event("Round Robin attempted with empty queue")
+            return
+
+    except FileNotFoundError:
+        print("Error: job queue file not found.")
+        log_event("Round Robin failed: queue file not found")
+        return
+
+    updated_queue = []
+
+    while jobs:
+        current_job = jobs.pop(0)
+
+        student_id = current_job[0]
+        job_name = current_job[1]
+        priority = current_job[2]
+        execution_time = int(current_job[3])
+
+        run_time = min(quantum, execution_time)
+        remaining_time = execution_time - run_time
+
+        print(
+            f"Running job '{job_name}' for {run_time} seconds "
+            f"(Student ID: {student_id}, Priority: {priority})"
+        )
+
+        log_event(
+            f"Round Robin: ran job '{job_name}' for {run_time}s "
+            f"(Student {student_id}, Priority {priority})"
+        )
+
+        time.sleep(1)  # Simulate job execution (replace with actual processing in real implementation)
+
+        if remaining_time > 0:
+            print(f"Job '{job_name}' has {remaining_time} seconds remaining.")
+            updated_queue.append([student_id, job_name, priority, str(remaining_time)])
+        else:
+            print(f"Job '{job_name}' completed.")
+            with open(COMPLETED_FILE, "a") as completed:
+                completed.write(f"{student_id},{job_name}, {priority}, {execution_time}\n")
+
+            log_event(
+                f"Round Robin: completed job '{job_name}' "
+                f"(Student {student_id}, Priority {priority})"
+            )
+
+    with open(QUEUE_FILE, "w") as queue:
+        for job in updated_queue:
+            queue.write(",".join(job) + "\n")
+
+    print("Round Robin scheduling cycle complete.")
+    
     
 def run_priority():
     print("Feature not yet implemented")  # Placeholder for actual implementation
