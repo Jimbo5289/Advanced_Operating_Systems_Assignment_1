@@ -18,13 +18,49 @@ def show_menu():
     print("4. Run Priority Scheduler")
     print("5. View Completed Jobs")
     print("6. Exit")
-    print("="* 39)
+    print("=" * 39)
     
 def view_pending_jobs():
     print("Feature not yet implemented")  # Placeholder for actual implementation
     
 def submit_jobs():
-    print("Feature not yet implemented")  # Placeholder for actual implementation
+    print("\n========== Submit Job ==========")
+    
+    student_id = input("Enter student ID: ").strip()
+    job_name = input("Enter job name: ").strip()
+    
+    try: 
+        execution_time = int(input("Enter estimated execution time (in seconds): ").strip())
+        priority = int(input("Enter job priority (1-10): ").strip())
+    except ValueError:
+        print("Error: execution time and priority must be numeric values.")
+        log_event("Failed job submission due to invalid input")
+        return
+    
+    if not student_id or not job_name:
+        print("Error: student ID and job name cannot be empty.")
+        log_event("Failed job submission due to empty fields")
+        return
+    
+    if execution_time <= 0:
+        print("Error: execution time must be greater than 0.")
+        log_event(f"Invalid execution time entered for job {job_name}")
+        return
+    
+    if priority < 1 or priority > 10:
+        print("Error: priority must be between 1 and 10.")
+        log_event(f"Invalid priority entered for job {job_name}")
+        return
+    
+    with open(QUEUE_FILE, "a") as queue:
+        queue.write(f"{student_id},{job_name},{priority},{execution_time}\n")
+        
+    print(f"Job '{job_name}' submitted successfully!")
+    log_event(
+        f"Student {student_id} submitted job '{job_name}' "
+        f"(priority={priority}, execution_time={execution_time}s)"
+    )
+    
     
 def run_round_robin():
     print("Feature not yet implemented")  # Placeholder for actual implementation
