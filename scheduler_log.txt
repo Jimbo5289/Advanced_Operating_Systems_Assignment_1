@@ -8,3 +8,5 @@
 2026-03-09 15:55:00 : Priority Scheduler: started job 'LowPriorityJob' (Student 100102503, Priority 2, Execution Time 20s)
 2026-03-09 15:55:01 : Priority Scheduler: completed job 'LowPriorityJob' (Student 100102503, Priority 2)
 2026-03-09 16:00:01 : Exited the scheduler
+2026-03-09 18:50:01 : Viewed completed jobs: 3 job(s) listed
+2026-03-09 18:50:14 : Exited the scheduler
