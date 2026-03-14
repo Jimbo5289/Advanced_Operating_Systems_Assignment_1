@@ -27,3 +27,20 @@
 2026-03-14 12:13:43 : Successful login for user 'student1'
 2026-03-14 12:13:56 : Successful submission by user 'student1': file 'sample1.pdf' stored as 'student1_20260314_121356_sample1.pdf'
 2026-03-14 12:13:59 : Secure exam submission system exited
+2026-03-14 16:22:53 : New user registered: jimbo5289
+2026-03-14 16:23:30 : User jimbo5289 logged in successfully
+2026-03-14 16:23:50 : User jimbo5289 logged in successfully
+2026-03-14 16:33:25 : Secure exam submission system exited
+2026-03-14 16:53:06 : Successful login for user 'jimbo5289'
+2026-03-14 16:53:16 : Blocked repeated login attempt while user 'jimbo5289' was already signed in
+2026-03-14 16:53:30 : Invalid menu selection: 'jimbo5289'
+2026-03-14 16:53:37 : Invalid menu selection: 'password1234'
+2026-03-14 17:05:53 : Blocked repeated login attempt while user 'jimbo5289' was already signed in
+2026-03-14 17:05:57 : Blocked repeated login attempt while user 'jimbo5289' was already signed in
+2026-03-14 17:05:59 : Blocked repeated login attempt while user 'jimbo5289' was already signed in
+2026-03-14 17:06:01 : Blocked repeated login attempt while user 'jimbo5289' was already signed in
+2026-03-14 17:06:09 : User 'jimbo5289' logged out
+2026-03-14 17:06:32 : Successful login for user 'jimbo5289'
+2026-03-14 17:09:27 : Successful login for user 'jimbo5289'
+2026-03-14 17:13:58 : Secure exam submission system exited
+2026-03-14 17:58:48 : Secure exam submission system exited
