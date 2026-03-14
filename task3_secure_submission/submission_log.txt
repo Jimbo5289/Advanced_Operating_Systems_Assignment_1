@@ -4,3 +4,26 @@
 2026-03-14 11:03:53 : Failed login attempt for user 'student1'
 2026-03-14 11:04:11 : Failed login attempt for user 'student1'
 2026-03-14 11:04:11 : Account locked after 3 failed attempts for user 'student1'
+2026-03-14 11:30:49 : Successful login for user 'student1'
+2026-03-14 11:31:28 : Submission rejected for user 'student1': invalid file type '.txt'
+2026-03-14 11:31:47 : Successful submission by user 'student1': file 'draft.docx', size=0 bytes
+2026-03-14 11:32:09 : Successful submission by user 'student1': file 'sample.pdf', size=0 bytes
+2026-03-14 11:32:17 : Secure exam submission system exited
+2026-03-14 11:32:44 : Blocked file submission attempt without login
+2026-03-14 11:40:45 : Secure exam submission system exited
+2026-03-14 11:42:14 : Successful login for user 'student1'
+2026-03-14 11:42:29 : Submission rejected for user 'student1': file 'largefile.pdf' exceeded 5 MB
+2026-03-14 11:44:07 : Secure exam submission system exited
+2026-03-14 11:44:50 : Successful login for user 'student1'
+2026-03-14 11:45:33 : Duplicate submission rejected for user 'student1': file 'sample.pdf'
+2026-03-14 11:48:32 : Secure exam submission system exited
+2026-03-14 12:09:51 : Successful login for user 'student1'
+2026-03-14 12:10:12 : Secure exam submission system exited
+2026-03-14 12:11:34 : Failed login attempt for user 'student1'
+2026-03-14 12:11:38 : Blocked file submission attempt without login
+2026-03-14 12:11:59 : Successful login for user 'student1'
+2026-03-14 12:12:12 : Duplicate submission rejected for user 'student1': file 'sample.pdf'
+2026-03-14 12:12:15 : Secure exam submission system exited
+2026-03-14 12:13:43 : Successful login for user 'student1'
+2026-03-14 12:13:56 : Successful submission by user 'student1': file 'sample1.pdf' stored as 'student1_20260314_121356_sample1.pdf'
+2026-03-14 12:13:59 : Secure exam submission system exited

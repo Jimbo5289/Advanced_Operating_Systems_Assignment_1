@@ -2,12 +2,19 @@ from datetime import datetime  # Used to create readable timestamps for log entr
 import os                      # Will be used later for file checks and submission handling
 import hashlib                 # Will be used later for duplicate file detection with hashing
 import time                    # Used to track login timing and suspicious repeated attempts
+import shutil                  # Used to copy submitted files to a secure directory (if needed)
 
 # File used to record submissions, login events, and security-related activity
 LOG_FILE = "submission_log.txt"
 SUBMISSION_RECORD_FILE = "submitted_files.txt"   # File used to store previous submission records
 MAX_FILE_SIZE = 5 * 1024 * 1024                  # Maximum allowed file size: 5 MB in bytes
 ALLOWED_EXTENSIONS = [".pdf", ".docx"]          # Only these file types are accepted
+SUBMISSION_DIR = "exam_submissions"
+
+# Ensure the secure submission directory exists
+# This prevents errors when storing submitted files
+if not os.path.exists(SUBMISSION_DIR):
+    os.makedirs(SUBMISSION_DIR)
 
 # Dictionary of valid users for this coursework prototype.
 # In a real system, passwords would be securely hashed and stored in a database.
@@ -200,20 +207,29 @@ def submit_exam_file():
         )
         return
 
-    # Record the successful submission in the submission record file.
+    # Create a unique filename to avoid overwriting existing submissions
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    secure_filename = f"{logged_in_user}_{timestamp}_{file_name}"
+
+    # Define the secure destination path
+    destination_path = os.path.join(SUBMISSION_DIR, secure_filename)
+
+    # Copy the file into the secure submission directory
+    shutil.copy(file_path, destination_path)
+
+    # Record the submission in the submission record file
     submission_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
     with open(SUBMISSION_RECORD_FILE, "a") as record_file:
         record_file.write(
             f"{logged_in_user},{file_name},{file_hash},{submission_time}\n"
         )
 
-    # Inform the user that the submission succeeded.
     print(f"File '{file_name}' submitted successfully.")
 
-    # Log the successful submission event.
     log_event(
         f"Successful submission by user '{logged_in_user}': "
-        f"file '{file_name}', size={file_size} bytes"
+        f"file '{file_name}' stored as '{secure_filename}'"
     )
 
 
