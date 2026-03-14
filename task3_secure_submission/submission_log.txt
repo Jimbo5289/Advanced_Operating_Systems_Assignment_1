@@ -1,0 +1,6 @@
+2026-03-14 10:58:57 : Failed login attempt for user 'Test'
+2026-03-14 11:01:06 : Successful login for user 'student1'
+2026-03-14 11:03:39 : Failed login attempt for user 'student1'
+2026-03-14 11:03:53 : Failed login attempt for user 'student1'
+2026-03-14 11:04:11 : Failed login attempt for user 'student1'
+2026-03-14 11:04:11 : Account locked after 3 failed attempts for user 'student1'
